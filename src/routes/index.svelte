@@ -1,16 +1,18 @@
 <script>
-  import Navbar from "../components/Navbar.svelte";
-  import global from  "../global.css"
+import Navbar from "../components/Navbar.svelte";
+import global from  "../global.css"
+import 'animate.css';
+import CircleBg from "../components/CircleBg.svelte";
+import ThemeBar from "../components/ThemeBar.svelte";
 </script>
 
 <div class="main">
-  <div class="glass"> 
+  <div class="glass animate__animated animate__rotateIn "> 
     <Navbar />
     <div class="content">dd</div>
   </div>
-  <div class="circle1"></div>
-  <div class="circle2"></div>
-  <div class="circle3"></div>
+  <ThemeBar />
+  <CircleBg />
 </div>
 
 
@@ -29,7 +31,7 @@
 .glass {
   background: white;
   min-height: 80vh;
-  width:80%;
+  width:85%;
   background: linear-gradient(
     to right bottom, 
   rgba(255, 255, 255, 0.7),
@@ -44,51 +46,5 @@
 .content {
   flex:3;
 }
-
-
-.circle1,
-.circle2,
-.circle3 {
-  background: white;
-  background: linear-gradient(
-    to right bottom,
-    rgba(255, 255, 255, 0.9),
-      rgba(255, 255, 255, 0.3)
-  );
-  position: absolute;
-  border-radius: 50%;
-}
-
-.circle1{
-  top: 5%;
-  right: 15%;
-  height: 15rem;
-  width: 15rem;
-}
-
-.circle2{
-  bottom: 3%;
-  left: 35%;
-  height: 10rem;
-  width: 10rem;
-  animation: zoomInOut 8s linear infinite;
-  background-color: rgb(255, 157, 45);
-}
-
-.circle3{
-  top: 35%;
-  left: 30%;
-  height: 5rem;
-  width: 5rem;
-  background-color: rgb(50, 122, 255);
-}
-/* @keyframes zoomInOut{
-  0%, 100%{
-    transform: scale(0.5);
-  }
-  50% {
-    transform: scale(1)
-  }
-} */
 
 </style>
